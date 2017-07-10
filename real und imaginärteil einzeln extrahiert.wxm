@@ -1,0 +1,15 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.5 ] */
+
+/* [wxMaxima: input   start ] */
+z
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+H(z):= (b0 + b1* (cos(z) + %i*sin(z))^(-1) + b2 * (cos(z) + %i*sin(z))^(-2)) / (1 + a1 * (cos(z) + %i*sin(z))^(-1) + a2 * (cos(z) + %i *sin(z))^(-2));
+realpart(H(z));
+imagpart(H(z));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

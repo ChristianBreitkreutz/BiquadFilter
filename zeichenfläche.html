@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+	index.html
+
+	Christian Breitkreutz 
+	christianBreitkreutz@gmx.de
+-->
+<head>
+  <meta charset="utf-8">
+  <title>digital Biquad Filter frequency plot .: Christian Breitkreutz :.</title>
+	<style type="text/css">
+		#UL { padding-left: 8px;}
+		#UR { padding-right: 40px;}
+		input, select, textarea { 
+			font-size:13px;
+		}
+	</style>
+<div id = "aColor" > </div>
+<div id = "myCenter" > </div>
+  <script src="code.js"></script>	
+	</head>
+</head>
+<body marginheight="0" marginwidth="0" onload= "myInit()" bgcolor = "#123456">
+	<div id="myArea" >
+		<table border = "0"  align="center" id = "main">
+		<tr>
+			<td colspan="3" >
+				<canvas id="Area" width="1050" height="500"></canvas>
+			</td>
+		</tr>
+		<tr>
+			<td align = "left" valign="bottom" id = "UL">
+				<table border = "0">
+					 <tr>
+						<td align = "right"><a  >B0</a></td>
+						<td><input type="text" value="0.000000" size=21 id = "B0" onchange="setNewParams()"> </td>
+					</tr>
+					<tr>
+						<td align = "right"><a  >B1</a> </td>
+						<td><input type="text" value="0.000000" size=21 id = "B1" onchange="setNewParams()"></td>
+					</tr>
+					<tr>
+						<td align = "right"><a  >B2</a> </td>
+						<td><input type="text" value="0.000000" size=21 id = "B2" onchange="setNewParams()"></td>
+					</tr>
+					<tr>
+						<td align = "right"><a  >A1</a> </td>
+						<td><input type="text" value="0.000000" size=21 id = "A1" onchange="setNewParams()"></td>	
+					</tr>
+					<tr>
+						<td align = "right"><a  >A2</a> </td>
+						<td><input type="text" value="0.000000" size=21 id = "A2" onchange="setNewParams()"></td>	
+					</tr>
+				</table>
+			</td>
+
+			<td align = "center" valign="bottom">
+				<table border = "0">
+					 <tr>
+						<td align = "right"><a  >input value name</a></td>
+						<td><input type="text" value="value" size=21 id = "cppValueName" onchange="setNewCppText()"> </td>
+					</tr>
+					 <tr>
+						<td align = "right"><a  >delay array name</a></td>
+						<td><input type="text" value="bq1Delay" size=21 id = "cppDelay" onchange="setNewCppText()"> </td>
+					</tr>
+
+				</table>
+				<a  >out = </a> <textarea id = "cppCopyText"  cols="50" rows="5"></textarea>
+			</td>
+			<td align = "right" valign="bottom" id = "UR" >
+				<table border = "0" >
+					<tr>
+						<td align = "right"><a  >Cross rate</a> </td>
+						<td><input type="text" value="1000" size=21 id = "crossrate" onchange="calcNewParams()"> </td>
+					</tr>
+					<tr>
+					
+						<td align = "right" valign="bottom"><input type= "checkbox" id ="CbPreWarping" onchange="setPrewarping(this)" ></td>
+				
+						<td><div id = "prewarpText"></div><a  >prewarping</a></td>
+					</tr>
+		
+					<tr>
+						<td align = "right"><a  >Quality </a></td>
+						<td><input type="text" value="1" size=21 id = "quality" onchange="calcNewParams()"> </td>
+					</tr>
+
+					<tr>
+						<td align = "right" ><a  >Sample rate </a></td>
+						<td>
+							<select onchange="setSamplerate(this)"> 
+								<option>8000</option> 						  
+								<option>22050</option> 
+								<option selected>44100</option>
+								<option>88200</option>
+								<option>96000</option>
+								<option>176400</option>
+								<option>192000</option>
+							</select>
+						</td>
+
+					</tr><tr>
+						<td align = "right" ><a  >Type </a></td>
+						<td>
+							<select onchange="setFilter(this)"> 
+								<option selected>lowpass</option> 						  
+								<option>highpass</option> 
+								<option>bandpass</option>
+								<option>allpass</option>
+								<option>notch</option>
+							</select>
+						</td>
+
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div> <!-- css my field -->
+<div id="doof"> </div>
+</body>
+</html>

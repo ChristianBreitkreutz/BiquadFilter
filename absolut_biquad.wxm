@@ -1,0 +1,33 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.5 ] */
+
+/* [wxMaxima: input   start ] */
+z: cos(a)+ %i* sin(a);
+B(z):= (b0 + b1 * z^(-1) + b2 * z^(-2)) / (1 + a1 * z^(-1) + a2 * z^(-2));
+(abs(B(z)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(abs(1/(sin(a)*I+cos(a))+sin(a)*I+cos(a)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+((-sin(a)^2 + cos(a)^2+1)^2 + (2*cos(a) *sin(a))^2)^0.5/((cos(a))^2 + (sin(a))^2)^0.5;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fullratsimp(abs(b2/Z^2+b1/(sin(a)*I+cos(a))+b0)/abs(a1/(sin(a)*I+cos(a))+a2/(sin(a)*I+cos(a))^2+1));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(abs(b1/(sin(a)*%i+cos(a))+b2/(sin(a)*%i+cos(a))^2+b0));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+z: 2* %pi * x/44100;
+B(z):= (b0 + b1 * z^(-1) + b2 * z^(-2)) / (1 + a1 * z^(-1) + a2 * z^(-2));
+(B(z));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
